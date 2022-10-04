@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 import './App.css';
 
+const EXCHANGES_URL = `https://api.coingecko.com/api/v3/exchanges`;
+const RESULTS_PER_REQUEST = 10;
+
 function App() {
+  const [data, setData] = useState();
+  const [error, setError] = useState();
+
+  useEffect(() => {
+    const doFetch = async () => {
+      const url = EXCHANGES_URL + `?per_page=${RESULTS_PER_REQUEST}`;
+      try {
+        const res = await axios.get(url);
+        setData(res.data);
+      } catch (error) {
+        if (error) console.log(error.toJson());
+        setError(error);
+      }
+    };
+    doFetch();
+  }, []);
+  console.log(data);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>hi</div>
     </div>
   );
 }
