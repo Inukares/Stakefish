@@ -10,6 +10,7 @@ function App() {
   const [error, setError] = useState();
 
   useEffect(() => {
+    // todo: handle cleanup if http call fails in the meantime of updating component
     const doFetch = async () => {
       const url = EXCHANGES_URL + `?per_page=${RESULTS_PER_REQUEST}`;
       try {
