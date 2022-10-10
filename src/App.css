@@ -1,0 +1,31 @@
+.app {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background: green;
+}
+
+.container {
+    display: grid;
+    max-width: 1000px;
+    align-items:center;
+    align-content:center;
+    margin: 2em auto;
+    height: calc(100vh - 1em);
+    grid-template-columns: repeat(8, minmax(120px, max-content));
+    grid-template-rows: repeat(10, minmax(70px, 1fr));
+    justify-items: center;
+}
+
+.container div div {
+    text-align: center;
+}
+
+.container div img {
+    text-align:center;
+}
+
+.item {
+    display: contents;
+}
