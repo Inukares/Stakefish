@@ -3,17 +3,13 @@
     align-items: center;
     justify-content: center;
     height: 100%;
-    background: green;
 }
 
 .container {
     display: grid;
-    max-width: 1000px;
     align-items:center;
     align-content:center;
     margin: 2em auto;
-    height: calc(100vh - 1em);
-    grid-template-columns: repeat(8, minmax(120px, max-content));
     grid-template-rows: repeat(10, minmax(70px, 1fr));
     justify-items: center;
 }
@@ -22,10 +18,19 @@
     text-align: center;
 }
 
-.container div img {
-    text-align:center;
+.item > * {
+    min-width:0
+}
+
+.container .item:nth-child(2n) {
+    background-color: yellow;
 }
 
 .item {
-    display: contents;
+    display: inline-grid;
+    grid-gap: 1px;
+    grid-template-columns: repeat(8, 150px);
+    grid-column: 1/ -1;
+    justify-content: center;
+    place-items: center;
 }
