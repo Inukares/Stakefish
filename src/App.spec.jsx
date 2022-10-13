@@ -5,6 +5,8 @@ import { mock, missingData } from './mockResponse';
 test.use({ viewport: { width: 500, height: 500 } });
 
 // TODO: Test for routing logic
+// TODO: Should mock returned data so that the test is robust. Should
+// also provide better granularity with data-test-ids or in other similar way.
 test('should display perfect path', async ({ mount }) => {
   const component = await mount(<App></App>);
   await expect(component).toContainText('loading');
@@ -24,21 +26,4 @@ test('should display perfect path', async ({ mount }) => {
       mock[i].trade_volume_24h_btc_normalized
     );
   }
-});
-
-// TODO: add mocking http call and providing default values
-test.skip('should fallback to default values with insufficient data', async ({
-  mount,
-}) => {
-  const component = await mount(<App></App>);
-  await expect(component).toContainText('loading');
-  const mock = missingData[0];
-  await expect(component).toContainText('-');
-  await expect(component).toContainText('Not specified');
-  await expect(component).toContainText('-');
-  await expect(component).toContainText('No');
-  await expect(component).toContainText('-');
-  await expect(component).toContainText('-');
-  await expect(component).toContainText('Unknown');
-  await expect(component).toContainText('Unknown');
 });

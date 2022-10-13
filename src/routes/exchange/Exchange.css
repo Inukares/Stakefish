@@ -1,0 +1,7 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 120px max-content;
+    grid-auto-rows: minmax(80px, 1fr);
+    place-items: center;
+    justify-items: flex-start;
+}
