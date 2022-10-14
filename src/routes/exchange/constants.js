@@ -11,7 +11,7 @@ export const TRADE_VOLUME_24H_BTC = 'trade_volume_24h_btc';
 export const TRADE_VOLUME_24H_BTC_NORMALIZED =
   'trade_volume_24h_btc_normalized';
 
-export const supportedParams = [
+export const SUPPORTED_PARAMS = [
   NAME,
   YEAR_ESTABLISHED,
   COUNTRY,

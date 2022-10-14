@@ -1,5 +1,5 @@
-import { supportedParams } from './constants';
-import { getExchangeFromURL } from './Exchange';
+import { SUPPORTED_PARAMS } from './constants';
+import { getExchangeParamsFromURL } from './Exchange';
 
 describe('getExchangeFromURL', () => {
   beforeEach(() => {
@@ -29,7 +29,7 @@ describe('getExchangeFromURL', () => {
     // goal is to achieve similar url to below, but with ensuring SUPPORTED_PARAMS is a whitelist
     //'http://dummy.com/exchange?name=binance&year_established=2017&country=japan.......';
     let href = 'http://dummy.com/';
-    href += supportedParams.reduce((accumulator, param) => {
+    href += SUPPORTED_PARAMS.reduce((accumulator, param) => {
       return accumulator + param + `=${param}&`;
     }, 'exchange?');
 
@@ -46,12 +46,12 @@ describe('getExchangeFromURL', () => {
       url: 'url',
       year_established: 'year_established',
     };
-    expect(getExchangeFromURL()).toEqual(expected);
+    expect(getExchangeParamsFromURL()).toEqual(expected);
   });
 
   it('should omit not supported params', () => {
     global.window.location.search = 'http://dummy.com?someparam=param';
-    expect(getExchangeFromURL()).toEqual({});
+    expect(getExchangeParamsFromURL()).toEqual({});
   });
 
   it('should work with both supported and not suported params', () => {
@@ -61,7 +61,7 @@ describe('getExchangeFromURL', () => {
       country: 'UK',
       url: 'maliciousURL',
     };
-    expect(getExchangeFromURL()).toEqual(expected);
+    expect(getExchangeParamsFromURL()).toEqual(expected);
   });
 });
 

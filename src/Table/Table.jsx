@@ -1,4 +1,4 @@
-import { getTradeVolume } from './getTradeVolume';
+import { formatTradeVolume } from '../routes/exchange/Exchange';
 
 export const Table = ({ exchanges }) => {
   const header = (
@@ -29,7 +29,7 @@ export const Table = ({ exchanges }) => {
       <div> {exchange.trust_score_rank ?? '-'}</div>
       <div>
         {' '}
-        {getTradeVolume(
+        {formatTradeVolume(
           exchange.trade_volume_24h_btc_normalized,
           exchange.trade_volume_24h_btc
         )}
