@@ -28,6 +28,8 @@ const config = {
 
     /* Port to use for Playwright component endpoint. */
     ctPort: 3100,
+    width: 500,
+    height: 500;
   },
 
   /* Configure projects for major browsers */

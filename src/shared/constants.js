@@ -10,17 +10,3 @@ export const TRUST_SCORE_RANK = 'trust_score_rank';
 export const TRADE_VOLUME_24H_BTC = 'trade_volume_24h_btc';
 export const TRADE_VOLUME_24H_BTC_NORMALIZED =
   'trade_volume_24h_btc_normalized';
-
-export const SUPPORTED_PARAMS = [
-  NAME,
-  YEAR_ESTABLISHED,
-  COUNTRY,
-  DESCRIPTION,
-  HAS_TRADING_INCENTIVE,
-  IMG,
-  TRADE_VOLUME_24H_BTC,
-  TRADE_VOLUME_24H_BTC_NORMALIZED,
-  TRUST_SCORE,
-  TRUST_SCORE_RANK,
-  URL,
-];

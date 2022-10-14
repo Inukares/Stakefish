@@ -1,5 +1,5 @@
-import { SUPPORTED_PARAMS } from './constants';
-import { getExchangeParamsFromURL } from './Exchange';
+import { getExchangeFromURL } from './utils';
+import { SUPPORTED_PARAMS } from './utils';
 
 describe('getExchangeFromURL', () => {
   beforeEach(() => {
@@ -46,12 +46,12 @@ describe('getExchangeFromURL', () => {
       url: 'url',
       year_established: 'year_established',
     };
-    expect(getExchangeParamsFromURL()).toEqual(expected);
+    expect(getExchangeFromURL()).toEqual(expected);
   });
 
   it('should omit not supported params', () => {
     global.window.location.search = 'http://dummy.com?someparam=param';
-    expect(getExchangeParamsFromURL()).toEqual({});
+    expect(getExchangeFromURL()).toEqual({});
   });
 
   it('should work with both supported and not suported params', () => {
@@ -61,8 +61,6 @@ describe('getExchangeFromURL', () => {
       country: 'UK',
       url: 'maliciousURL',
     };
-    expect(getExchangeParamsFromURL()).toEqual(expected);
+    expect(getExchangeFromURL()).toEqual(expected);
   });
 });
-
-describe('sanitizeInput', () => {});

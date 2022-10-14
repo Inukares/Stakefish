@@ -1,8 +1,6 @@
 import { test, expect } from '@playwright/experimental-ct-react';
-import { Table } from './Table';
-import { mock, missingData } from '../mockResponse';
-
-test.use({ viewport: { width: 500, height: 500 } });
+import { Table } from '../src/Table/Table';
+import { missingData } from '../src/shared/mockResponse';
 
 test('should fallbick to default values with insufficient data', async ({
   mount,

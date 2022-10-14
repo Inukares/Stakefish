@@ -1,4 +1,3 @@
-// var sanitizeUrl = require("@braintree/sanitize-url").sanitizeUrl;
 import { sanitizeUrl } from '@braintree/sanitize-url';
 
 export const getURLParams = (param) => {
