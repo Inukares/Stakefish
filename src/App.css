@@ -17,31 +17,3 @@
 .container div div {
     text-align: center;
 }
-
-.item > * {
-    min-width:0
-}
-
-.container .item:nth-child(2n) {
-    background-color: yellow;
-}
-
-.header {
-    cursor:default;
-    display: inline-grid;
-    grid-gap: 1px;
-    grid-template-columns: repeat(8, 150px);
-    grid-column: 1/ -1;
-    justify-content: center;
-    place-items: center;
-}
-
-.item {
-    cursor: pointer;
-    display: inline-grid;
-    grid-gap: 1px;
-    grid-template-columns: repeat(8, 150px);
-    grid-column: 1/ -1;
-    justify-content: center;
-    place-items: center;
-}
