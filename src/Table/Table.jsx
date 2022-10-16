@@ -1,4 +1,5 @@
 import { formatTradeVolume } from '../routes/exchange/Exchange';
+import { Link } from 'react-router-dom';
 
 export const Table = ({ exchanges }) => {
   const header = (
@@ -14,28 +15,35 @@ export const Table = ({ exchanges }) => {
     </div>
   );
 
-  const content = exchanges.map((exchange, index) => (
-    <div key={exchange.name ?? index} className="item">
-      <div> {exchange.name ?? '-'}</div>
-      <img
-        data-test-id={exchange.name + '-img'}
-        alt={exchange.name}
-        src={exchange.image}
-      ></img>
-      <div> {exchange.year_established ?? 'Not specified'}</div>
-      <div> {exchange.country ?? '-'}</div>
-      <div> {exchange.has_trading_incentive ? 'Yes' : 'No'}</div>
-      <div> {exchange.trust_score ?? '-'}</div>
-      <div> {exchange.trust_score_rank ?? '-'}</div>
-      <div>
-        {' '}
-        {formatTradeVolume(
-          exchange.trade_volume_24h_btc_normalized,
-          exchange.trade_volume_24h_btc
-        )}
-      </div>
-    </div>
-  ));
+  const content = exchanges.map((exchange, index) => {
+    const link = 
+    return (
+      <Link
+        href={exchange.url ?? '/exchange'}
+        key={exchange.name ?? index}
+        className="item"
+      >
+        <div> {exchange.name ?? '-'}</div>
+        <img
+          data-test-id={exchange.name + '-img'}
+          alt={exchange.name}
+          src={exchange.image}
+        ></img>
+        <div> {exchange.year_established ?? 'Not specified'}</div>
+        <div> {exchange.country ?? '-'}</div>
+        <div> {exchange.has_trading_incentive ? 'Yes' : 'No'}</div>
+        <div> {exchange.trust_score ?? '-'}</div>
+        <div> {exchange.trust_score_rank ?? '-'}</div>
+        <div>
+          {' '}
+          {formatTradeVolume(
+            exchange.trade_volume_24h_btc_normalized,
+            exchange.trade_volume_24h_btc
+          )}
+        </div>
+      </Link>
+    );
+  });
 
   return (
     <>

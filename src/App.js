@@ -28,12 +28,17 @@ function App() {
     doFetch();
   }, []);
 
+  const onClick =(url) => {
+    
+
+  }
+
   return (
     <div className="App">
       {loading ? <span>loading</span> : null}
       {data && (
         <div className="container">
-          <Table exchanges={data} />
+          <Table onClick={onClick} exchanges={data} />
         </div>
       )}
     </div>
