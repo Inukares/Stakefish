@@ -1,20 +1,6 @@
 import { formatTradeVolume } from '../routes/exchange/Exchange';
 import { Link } from 'react-router-dom';
-import { URL } from '../shared/constants';
 import './Table.css';
-
-const getLink = (exchange) => {
-  let url = '/exchange?';
-  for (const [key, value] of Object.entries(exchange)) {
-    if (!value) continue;
-    if (key === URL) {
-      url += key + '=' + encodeURI(value) + '&';
-    } else {
-      url += key + '=' + encodeURIComponent(value) + '&';
-    }
-  }
-  return url;
-};
 
 export const Table = ({ exchanges }) => {
   const header = (
@@ -31,7 +17,8 @@ export const Table = ({ exchanges }) => {
   );
 
   const content = exchanges.map((exchange, index) => {
-    const link = getLink(exchange);
+    const link = `/exchange/${exchange.id}`;
+
     return (
       <Link
         relative="path"
