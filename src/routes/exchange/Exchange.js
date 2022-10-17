@@ -1,7 +1,7 @@
 import { useGetExchangeByNameQuery } from '../../services/exchangesApi';
 import './Exchange.css';
 import { useParams } from 'react-router-dom';
-import { fallbackToDefaults } from '../../shared/fallbackToDefaults';
+import { sanitize } from '../../shared/sanitize';
 
 // TODO: Remove sanitize url package
 export const formatTradeVolume = (volumeNormalised, volume) => {
@@ -38,7 +38,7 @@ export const Exchange = () => {
     telegram_url,
     slack_url,
     facebook_url,
-  } = fallbackToDefaults(data);
+  } = sanitize(data);
 
   const content = (
     <>

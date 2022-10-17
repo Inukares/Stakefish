@@ -23,20 +23,20 @@ const DEFAULTS = {
   status_updats: null,
 };
 
-export const fallbackToDefaults = (exchange) => {
+export const sanitize = (exchange) => {
   const exchangeWithDefaults = {};
   for (const [key, defaultValue] of Object.entries(DEFAULTS)) {
     if (!exchange[key]) {
       exchangeWithDefaults[key] = defaultValue;
     } else {
-      exchangeWithDefaults[key] = sanitize(key, exchange[key]);
+      exchangeWithDefaults[key] = decodeInput(key, exchange[key]);
     }
   }
 
   return exchangeWithDefaults;
 };
 
-export const sanitize = (key, value) => {
+export const decodeInput = (key, value) => {
   if (key === 'url') return decodeURIComponent(value);
   if (key === 'other_url_1') return decodeURIComponent(value);
   if (key === 'other_url_2') return decodeURIComponent(value);

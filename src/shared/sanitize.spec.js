@@ -1,6 +1,6 @@
-import { fallbackToDefaults } from './fallbackToDefaults';
+import { sanitize } from './sanitize';
 
-describe('fallbackToDefaults', () => {
+describe('sanitize', () => {
   it('should not change already present values', () => {
     const exchange = {
       name: 'sth',
@@ -8,6 +8,8 @@ describe('fallbackToDefaults', () => {
       country: 'UK',
       description: 'description',
       has_trading_incentive: true,
+      other_url_1:
+        'https://www.kraken.com/redirect?url=https%3A%2F%2Flinkedin.com%2Fcompany%2Fkraken-exchange',
     };
 
     const expected = {
@@ -23,8 +25,9 @@ describe('fallbackToDefaults', () => {
       trust_score_rank: '0',
       url: '-',
       twitter_handle: '-',
-      other_url_1: '-',
-      other_url_2: '-',
+      other_url_1:
+        'https://www.kraken.com/redirect?url=https://linkedin.com/company/kraken-exchange',
+      other_url_2: '',
       reddit_urlL: '-',
       telegram_url: '-',
       slack_url: '-',
@@ -34,7 +37,7 @@ describe('fallbackToDefaults', () => {
       tickers: null,
       status_updats: null,
     };
-    expect(fallbackToDefaults(exchange)).toEqual(expected);
+    expect(sanitize(exchange)).toEqual(expected);
   });
 
   it('should return defaults when values are falsy', () => {
@@ -51,8 +54,8 @@ describe('fallbackToDefaults', () => {
       trust_score_rank: '0',
       url: '-',
       twitter_handle: '-',
-      other_url_1: '-',
-      other_url_2: '-',
+      other_url_1: '',
+      other_url_2: '',
       reddit_urlL: '-',
       telegram_url: '-',
       slack_url: '-',
@@ -63,6 +66,6 @@ describe('fallbackToDefaults', () => {
       status_updats: null,
     };
 
-    expect(fallbackToDefaults({})).toEqual(expected);
+    expect(sanitize({})).toEqual(expected);
   });
 });
