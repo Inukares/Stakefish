@@ -5,6 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom';
 import { Exchange } from './routes/exchange/Exchange';
+import { Provider } from 'react-redux';
+import { store } from './store';
 import ErrorPage from './ErrorPage';
 
 const router = createBrowserRouter([
@@ -14,7 +16,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: '/exchange',
+    path: '/exchange/:id',
     element: <Exchange />,
   },
 ]);
@@ -22,7 +24,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );
 
