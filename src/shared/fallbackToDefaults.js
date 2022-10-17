@@ -29,9 +29,21 @@ export const fallbackToDefaults = (exchange) => {
     if (!exchange[key]) {
       exchangeWithDefaults[key] = defaultValue;
     } else {
-      exchangeWithDefaults[key] = exchange[key];
+      exchangeWithDefaults[key] = sanitize(key, exchange[key]);
     }
   }
 
   return exchangeWithDefaults;
+};
+
+export const sanitize = (key, value) => {
+  if (key === 'url') return decodeURIComponent(value);
+  if (key === 'other_url_1') return decodeURIComponent(value);
+  if (key === 'other_url_2') return decodeURIComponent(value);
+  if (key === 'slack_url') return decodeURIComponent(value);
+  if (key === 'facebook_url') return decodeURIComponent(value);
+  if (key === 'reddit_url') return decodeURIComponent(value);
+  if (key === 'telegram_url') return decodeURIComponent(value);
+
+  return value;
 };

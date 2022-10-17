@@ -81,7 +81,7 @@ export const Exchange = () => {
       <div>{telegram_url}</div>
       <div>Other links</div>
       <div className="social">
-        }{other_url_1 && <span>{other_url_1}</span>}
+        {other_url_1 && <span>{other_url_1}</span>}
         {other_url_2 && <span>{other_url_2}</span>}
       </div>
     </>

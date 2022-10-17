@@ -11,7 +11,7 @@ export const exchangesApi = createApi({
       query: (name) => `exchanges/${name}`,
     }),
     getExchanges: builder.query({
-      query: () => `exchanges`,
+      query: (perPage = 10) => `exchanges?per_page=${perPage}`,
     }),
   }),
 });
