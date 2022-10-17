@@ -32,7 +32,6 @@ export const Table = ({ exchanges }) => {
 
   const content = exchanges.map((exchange, index) => {
     const link = getLink(exchange);
-    console.log(link);
     return (
       <Link
         relative="path"

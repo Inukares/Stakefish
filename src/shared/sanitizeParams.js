@@ -24,7 +24,7 @@ export const sanitizeParams = (key, value) => {
       if (!value) return 'Unknown';
       break;
     case DESCRIPTION:
-      if (!value) return '';
+      if (!value) return '-';
       break;
     case HAS_TRADING_INCENTIVE:
       if (!value) return 'No';
