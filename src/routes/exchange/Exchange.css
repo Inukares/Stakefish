@@ -1,4 +1,4 @@
-.wrapper {
+.grid {
     display: grid;
     grid-template-columns: 1fr 4fr;
     grid-auto-rows: minmax(80px, 1fr);
@@ -10,4 +10,14 @@
 .social {
     display: flex;
     flex-direction: column;
+}
+
+.button {
+    cursor: pointer;
+    padding:1em;
+    background-color: wheat;
+}
+
+.wrapper {
+    margin: 2em;
 }

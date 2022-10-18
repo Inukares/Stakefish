@@ -1,6 +1,7 @@
 import { useGetExchangeByNameQuery } from '../../services/exchangesApi';
 import './Exchange.css';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { sanitize } from '../../shared/sanitize';
 
 // TODO: Remove sanitize url package
@@ -14,7 +15,6 @@ export const Exchange = () => {
   const { id } = useParams();
   const { data, error, isLoading } = useGetExchangeByNameQuery(id);
   if (error) return <span>An error has occured.</span>;
-  // isLoading might be true if data is retrieved from cache. Or at least that is the
   if (isLoading) return <span>Loading...</span>;
   if (!data) return <span>Didn't hear back from API :(</span>;
 
@@ -79,6 +79,8 @@ export const Exchange = () => {
       <div>{slack_url}</div>
       <div>Telegram</div>
       <div>{telegram_url}</div>
+      <div>Twitter</div>
+      <div>{twitter_handle}</div>
       <div>Other links</div>
       <div className="social">
         {other_url_1 && <span>{other_url_1}</span>}
@@ -86,5 +88,12 @@ export const Exchange = () => {
       </div>
     </>
   );
-  return <div className="wrapper">{content}</div>;
+  return (
+    <div className="wrapper">
+      <Link to={'..'} path="relative">
+        <button className="button">Go Back to Main page</button>
+      </Link>
+      <div className="grid">{content}</div>
+    </div>
+  );
 };
