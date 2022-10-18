@@ -1,5 +1,9 @@
 To run
 
+## `npm install`
+
+and then
+
 ## `npm start`
 
 To test with Jest
