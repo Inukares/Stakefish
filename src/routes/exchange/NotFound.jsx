@@ -6,7 +6,6 @@ export default function NotFound({ error }) {
       <div id="error-page">
         <h1>Oops!</h1>
         <p>Sorry, couldn't find matching exhange</p>
-        <p>{/* <i>{error.data || error.message}</i> */}</p>
       </div>
     );
 

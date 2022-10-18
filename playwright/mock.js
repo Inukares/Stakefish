@@ -1,4 +1,4 @@
-export const mockExchanges = [
+export const exchanges = [
   {
     id: 'binance',
     name: 'Binance',
@@ -11,8 +11,8 @@ export const mockExchanges = [
     has_trading_incentive: false,
     trust_score: 10,
     trust_score_rank: 1,
-    trade_volume_24h_btc: 663923.1076539686,
-    trade_volume_24h_btc_normalized: 385432.7218176477,
+    trade_volume_24h_btc: 625557.3160442216,
+    trade_volume_24h_btc_normalized: 368827.6460027897,
   },
   {
     id: 'ftx_spot',
@@ -26,8 +26,8 @@ export const mockExchanges = [
     has_trading_incentive: false,
     trust_score: 10,
     trust_score_rank: 2,
-    trade_volume_24h_btc: 48887.3795348374,
-    trade_volume_24h_btc_normalized: 48887.3795348374,
+    trade_volume_24h_btc: 46705.3410379332,
+    trade_volume_24h_btc_normalized: 46705.3410379332,
   },
   {
     id: 'kucoin',
@@ -41,8 +41,8 @@ export const mockExchanges = [
     has_trading_incentive: false,
     trust_score: 10,
     trust_score_rank: 3,
-    trade_volume_24h_btc: 64501.35230342527,
-    trade_volume_24h_btc_normalized: 45654.46323521664,
+    trade_volume_24h_btc: 62473.79391048224,
+    trade_volume_24h_btc_normalized: 43687.59384298563,
   },
   {
     id: 'bybit_spot',
@@ -57,8 +57,8 @@ export const mockExchanges = [
     has_trading_incentive: false,
     trust_score: 10,
     trust_score_rank: 4,
-    trade_volume_24h_btc: 39340.93411667671,
-    trade_volume_24h_btc_normalized: 39340.93411667671,
+    trade_volume_24h_btc: 37951.90612423305,
+    trade_volume_24h_btc_normalized: 37951.90612423305,
   },
   {
     id: 'gate',
@@ -73,8 +73,8 @@ export const mockExchanges = [
     has_trading_incentive: false,
     trust_score: 10,
     trust_score_rank: 5,
-    trade_volume_24h_btc: 48790.68291016719,
-    trade_volume_24h_btc_normalized: 36627.20616272809,
+    trade_volume_24h_btc: 46106.50482204962,
+    trade_volume_24h_btc_normalized: 35138.94595362314,
   },
   {
     id: 'okex',
@@ -88,8 +88,8 @@ export const mockExchanges = [
     has_trading_incentive: false,
     trust_score: 10,
     trust_score_rank: 6,
-    trade_volume_24h_btc: 64613.41969670326,
-    trade_volume_24h_btc_normalized: 32980.59520840159,
+    trade_volume_24h_btc: 62338.985741117656,
+    trade_volume_24h_btc_normalized: 31640.506442056925,
   },
   {
     id: 'kraken',
@@ -103,8 +103,8 @@ export const mockExchanges = [
     has_trading_incentive: false,
     trust_score: 10,
     trust_score_rank: 7,
-    trade_volume_24h_btc: 22351.049683693127,
-    trade_volume_24h_btc_normalized: 22351.049683693127,
+    trade_volume_24h_btc: 20313.614611336456,
+    trade_volume_24h_btc_normalized: 20313.614611336456,
   },
   {
     id: 'huobi',
@@ -118,8 +118,8 @@ export const mockExchanges = [
     has_trading_incentive: false,
     trust_score: 10,
     trust_score_rank: 8,
-    trade_volume_24h_btc: 28723.831659804866,
-    trade_volume_24h_btc_normalized: 14853.574502850017,
+    trade_volume_24h_btc: 27875.11186228701,
+    trade_volume_24h_btc_normalized: 14250.03450590472,
   },
   {
     id: 'crypto_com',
@@ -134,8 +134,8 @@ export const mockExchanges = [
     has_trading_incentive: false,
     trust_score: 10,
     trust_score_rank: 9,
-    trade_volume_24h_btc: 12371.013648616237,
-    trade_volume_24h_btc_normalized: 12371.013648616237,
+    trade_volume_24h_btc: 11686.262469770752,
+    trade_volume_24h_btc_normalized: 11686.262469770752,
   },
   {
     id: 'binance_us',
@@ -149,7 +149,52 @@ export const mockExchanges = [
     has_trading_incentive: false,
     trust_score: 10,
     trust_score_rank: 10,
-    trade_volume_24h_btc: 22027.116640709544,
-    trade_volume_24h_btc_normalized: 11427.418314086071,
+    trade_volume_24h_btc: 20969.279211647958,
+    trade_volume_24h_btc_normalized: 10963.092100011958,
   },
 ];
+
+export const missingData = [
+  {
+    id: '',
+    name: '',
+    year_established: null,
+    country: '',
+    description: '',
+    url: '',
+    image: '',
+    has_trading_incentive: null,
+    trust_score: null,
+    trust_score_rank: null,
+    trade_volume_24h_btc: null,
+    trade_volume_24h_btc_normalized: null,
+  },
+];
+
+export const kraken = {
+  name: 'Kraken',
+  year_established: 2011,
+  country: 'United States',
+  description: '',
+  url: 'https://r.kraken.com/c/2223866/687155/10583',
+  image:
+    'https://assets.coingecko.com/markets/images/29/small/kraken.jpg?1584251255',
+  facebook_url: 'https://www.facebook.com/KrakenFX/',
+  reddit_url: 'https://www.reddit.com/r/Kraken/',
+  telegram_url: '',
+  slack_url: '',
+  other_url_1: 'https://github.com/payward',
+  other_url_2:
+    'https://www.kraken.com/redirect?url=https%3A%2F%2Flinkedin.com%2Fcompany%2Fkraken-exchange',
+  twitter_handle: 'krakenfx',
+  has_trading_incentive: false,
+  centralized: true,
+  public_notice: '',
+  alert_notice: '',
+  trust_score: 10,
+  trust_score_rank: 6,
+  trade_volume_24h_btc: 19719.246509918303,
+  trade_volume_24h_btc_normalized: 19719.246509918303,
+  tickers: [],
+  status_updates: [],
+};
