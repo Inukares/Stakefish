@@ -7,7 +7,6 @@
     cursor:default;
     display: inline-grid;
     grid-gap: 1px;
-    /* grid-template-columns: repeat(5, 250px); */
     grid-template-columns: 200px 180px 120px 400px 100px;
     grid-column: 1/ -1;
     justify-content: center;

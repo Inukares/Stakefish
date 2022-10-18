@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import './Table.css';
-import { sanitize } from '../shared/sanitize';
+import { sanitize } from '../../shared/sanitize';
 
 export const Table = ({ exchanges }) => {
   const header = (
@@ -16,6 +16,7 @@ export const Table = ({ exchanges }) => {
   const content = exchanges.map((exchange, index) => {
     const link = `/exchange/${exchange.id}`;
     const { name, country, image, url, trust_score_rank } = sanitize(exchange);
+    // clicking on an exchange changes url to /exchange/EXCHANGE_NAME and renders Exchange.jsx
     return (
       <Link
         relative="path"

@@ -3,8 +3,8 @@ import './Exchange.css';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { sanitize } from '../../shared/sanitize';
+import NotFound from './NotFound';
 
-// TODO: Remove sanitize url package
 export const formatTradeVolume = (volumeNormalised, volume) => {
   if (volumeNormalised) return volumeNormalised;
   if (volume) return volume;
@@ -14,11 +14,21 @@ export const formatTradeVolume = (volumeNormalised, volume) => {
 export const Exchange = () => {
   const { id } = useParams();
   const { data, error, isLoading } = useGetExchangeByNameQuery(id);
-  if (error) return <span>An error has occured.</span>;
+  if (error) return <NotFound error={error} />;
   if (isLoading) return <span>Loading...</span>;
   if (!data) return <span>Didn't hear back from API :(</span>;
 
-  console.log(data);
+  return (
+    <div className="wrapper">
+      <Link to={'/'}>
+        <button className="button">Go Back to Main page</button>
+      </Link>
+      <Grid data={data} />
+    </div>
+  );
+};
+
+const Grid = ({ data }) => {
   const {
     name,
     year_established,
@@ -88,12 +98,6 @@ export const Exchange = () => {
       </div>
     </>
   );
-  return (
-    <div className="wrapper">
-      <Link to={'..'} path="relative">
-        <button className="button">Go Back to Main page</button>
-      </Link>
-      <div className="grid">{content}</div>
-    </div>
-  );
+
+  return <div className="grid">{content}</div>;
 };

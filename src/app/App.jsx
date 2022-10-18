@@ -1,8 +1,6 @@
 import { Table } from './Table/Table';
 import './App.css';
-import { useGetExchangesQuery } from './services/exchangesApi';
-
-// TODO: not using axios. can get rid of it
+import { useGetExchangesQuery } from '../services/exchangesApi';
 
 function App() {
   const { data, isLoading, error } = useGetExchangesQuery();

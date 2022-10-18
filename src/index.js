@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import App from './app/App';
 import reportWebVitals from './reportWebVitals';
-import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Exchange } from './routes/exchange/Exchange';
 import { Provider } from 'react-redux';
 import { store } from './store';
-import ErrorPage from './ErrorPage';
+import ErrorPage from './app/ErrorPage';
+import NotFoundPage from './NotFoundPage';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
   {
     path: '/exchange/:id',
     element: <Exchange />,
+  },
+  {
+    path: '/*',
+    element: <NotFoundPage />,
   },
 ]);
 

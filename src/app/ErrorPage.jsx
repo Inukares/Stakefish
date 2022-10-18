@@ -6,8 +6,8 @@ export default function ErrorPage() {
 
   return (
     <div id="error-page">
-      <h1>Oops!</h1>
-      <p>Sorry, couldn't find matching exhange</p>
+      <h1>Oopsies! Unknown error has occured while fetching exchanges.</h1>
+      <p></p>
       <p>
         <i>{error.statusText || error.message}</i>
       </p>
