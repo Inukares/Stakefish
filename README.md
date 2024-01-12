@@ -1,3 +1,5 @@
+Minimalistic project getting list of top exchanges from coingecko API and presenting it in a responsive Table. Unit tested with Jest, E2E tsted with Playwright.
+
 To run
 
 ## `npm install`
@@ -20,7 +22,7 @@ and after app starts
 
 
 
-Few notes about the assignment:
+Few notes about the solution:
 
 I used css grid in multiple places, which is supported from IE11 onwards. 
 IE11 doesn't treat grid exactly the same as more up to date browsers, hence in order to achieve exactly same behaviour on all browsers I should add
